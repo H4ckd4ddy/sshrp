@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  sshrp:
+    container_name: sshrp
+    image: hackdaddy/sshrp
+    volumes:
+      - type: bind
+        source: ./config
+        target: /config
+        read_only: true
+    ports:
+      - "22:22"
+    restart: always
