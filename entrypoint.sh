@@ -8,7 +8,7 @@ if [ ! -f '/etc/ssh/ssh_host_dsa_key' ]; then
 fi
 
 # Delete all previous match user forward
-sed -i 's/.#//' /etc/ssh/sshd_config
+sed -i '1,/DONT-TOUCH/!d' /etc/ssh/sshd_config
 
 # Delete all users in sshrp group
 for username in `getent passwd | cut -d':' -f1`

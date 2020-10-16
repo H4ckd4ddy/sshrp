@@ -1,5 +1,5 @@
 {
     "destination_host": "exemple.com",
     "destination_user": "my-remote-user",
-    "desitnation_port": 22
+    "destination_port": 22
 }
