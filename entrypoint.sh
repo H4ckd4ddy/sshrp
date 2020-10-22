@@ -76,7 +76,7 @@ do
 
 	echo "" >> /etc/ssh/sshd_config
 	echo "Match User $username" >> /etc/ssh/sshd_config
-    echo "  ForceCommand ssh $duser@$dhost -p $dport \$SSH_ORIGINAL_COMMAND" >> /etc/ssh/sshd_config
+    echo "  ForceCommand ssh -o \"StrictHostKeyChecking=no\" -i /home/$username/.ssh/id_rsa $duser@$dhost -p $dport \$SSH_ORIGINAL_COMMAND" >> /etc/ssh/sshd_config
 
 done
 
