@@ -64,6 +64,7 @@ do
 
 	if [ -f $id_rsa ]; then
 		cp $id_rsa /home/$username/.ssh/id_rsa
+		cp $id_rsa.pub /home/$username/.ssh/id_rsa.pub
 	else
 		break
 	fi
