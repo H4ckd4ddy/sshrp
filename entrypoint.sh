@@ -55,11 +55,16 @@ do
 
 	authorized_keys="$user/authorized_keys"
 	id_rsa="$user/id_rsa"
+	password_file="$user/password"
 
 	if [ -f $authorized_keys ]; then
 		cp $authorized_keys /home/$username/.ssh/authorized_keys
-	else
-		break
+	#else
+	#	break
+	fi
+
+	if [ -f $password_file ]; then
+		printf '%s\n' "$username:$(cat $password_file)" | chpasswd -e
 	fi
 
 	if [ -f $id_rsa ]; then
